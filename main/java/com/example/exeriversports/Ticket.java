@@ -328,35 +328,3 @@ class Grounds_Tour extends Ticket_Decorator {
         return Ticket_Ob.getCost() + price;
     }
 }
-
-// This declares the class 'Ticket_Selection'.
-class Ticket_Selection {
-
-    // This is the entry point of the program and the main method itself.
-    // Potentially every other aspect of the program may need to access it meaning
-    // the access modifier must be public.
-    // The static method enables the calling of the main method without the need to
-    // create an object first, while void means the method has no return value.
-    public static void main(String[] args) {
-
-        // Here the Decorator Design Pattern creates an entire Coffee by creating a new
-        // object 'Custom_Ticket' from the class 'Coffee' and setting it as equal to
-        // the following chain of events.
-        // First the Espresso object is sent to the SteamedMilk constructor, then to
-        // the CaramelSyrup constructor, and finally to the HazelnutSyrup constructor
-        // effectively creating a Coffee with Steamed Milk, Caramel Syrup and Hazelnut
-        // Syrup.
-        // Realistically however creating the object 'Custom_Ticket' which is wrapped in
-        // the decorator classes 'SteamedMilk', 'CaramelSyrup' and 'HazelnutSyrup'.
-        Ticket Custom_Ticket = new VIP_Access(new Meal_Deal(new Front_Row_Section(new Adult_Ticket())));
-
-        // This outputs the text 'Custom Ticket ' then calls the 'getDescription' method
-        // from the object 'Custom_Ticket' and returns and outputs the accumulated value.
-        // System.out.println("\nCustom Ticket\n" + Custom_Ticket.getDescription());
-
-        // This outputs the text 'Price: £' then calls the 'getCost' method
-        // from the object 'Custom_Ticket' and returns and outputs the accumulated value.
-        //System.out.println("Total Price: £" + Custom_Ticket.getCost());
-        //System.out.println("\n");
-    }
-}
