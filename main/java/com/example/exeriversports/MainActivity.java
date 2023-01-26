@@ -1,7 +1,5 @@
 package com.example.exeriversports;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -26,13 +24,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // This initialises the variables and assigns the values entered by the user to them.
-        fName = (EditText) findViewById(R.id.fName);
-        lName = (EditText) findViewById(R.id.lName);
-        email = (EditText) findViewById(R.id.email);
-        password = (EditText) findViewById(R.id.password);
-        rePassword = (EditText) findViewById(R.id.rePassword);
-        Signup = (Button) findViewById(R.id.btnSignup);
-        Login = (Button) findViewById(R.id.btnLogin);
+        fName = findViewById(R.id.fName);
+        lName = findViewById(R.id.lName);
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
+        rePassword = findViewById(R.id.rePassword);
+        Signup = findViewById(R.id.btnSignup);
+        Login = findViewById(R.id.btnLogin);
         DB = new DBFunctions(this);
 
         // This is the listener for the 'Signup' button
@@ -56,9 +54,11 @@ public class MainActivity extends AppCompatActivity {
                     // If the values stored in the string variables 'Password' and 'RePassword' match execute the code within the 'IF statement'.
                     if(Password.equals(RePassword))
                     {
+                        // The 'checkmember' function will select all the record from the database that matches the users email, if there are no matching records execute the code within the 'IF statement.'
                         Boolean checkmember = DB.checkemail(Email);
                         if(checkmember==false)
                         {
+                            // The 'insert' function will insert all the data from the user into the database.
                             Boolean insert = DB.insertData(Email, FirstName, LastName, Password);
                             if(insert==true)
                             {
