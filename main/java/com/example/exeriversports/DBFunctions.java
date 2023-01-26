@@ -5,9 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.provider.ContactsContract;
-
-import androidx.annotation.Nullable;
 
 public class DBFunctions extends SQLiteOpenHelper {
 
@@ -26,6 +23,7 @@ public class DBFunctions extends SQLiteOpenHelper {
 
     }
 
+    // This will delete the member table if one already exists
     @Override
     public void onUpgrade(SQLiteDatabase Exe_River_Sports_DB, int i, int i1) {
         Exe_River_Sports_DB.execSQL("drop Table if exists members");
@@ -71,7 +69,7 @@ public class DBFunctions extends SQLiteOpenHelper {
         }
     }
 
-
+    // This function updates the users details where the users email matches the record stored in the members table within the database.
     public Boolean updateData(String FirstName, String LastName, String Email, String Password)
     {
         SQLiteDatabase Exe_River_Sports_DB = this.getWritableDatabase();
@@ -100,11 +98,10 @@ public class DBFunctions extends SQLiteOpenHelper {
         }
     }
 
+    // This function deletes the users details where the users email matches the record stored in the members table within the database.
     public Boolean deleteData(String Email)
     {
         SQLiteDatabase Exe_River_Sports_DB = this.getWritableDatabase();
-
-
         Cursor cursor = Exe_River_Sports_DB.rawQuery("Select * from members where email = ?", new String[] {Email});
         if(cursor.getCount()>0)
         {
@@ -126,13 +123,7 @@ public class DBFunctions extends SQLiteOpenHelper {
         }
     }
 
-    //public Cursor getdata()
-    //{
-    //    SQLiteDatabase Exe_River_Sports_DB = this.getWritableDatabase();
-    //    Cursor cursor = Exe_River_Sports_DB.rawQuery("Select * from members", null);
-    //    return cursor;
-    //}
-
+    // This function selects the users details where the users email matches the record stored in the members table within the database.
     public Cursor getdata(String Email)
     {
         SQLiteDatabase Exe_River_Sports_DB = this.getWritableDatabase();
@@ -140,4 +131,3 @@ public class DBFunctions extends SQLiteOpenHelper {
         return cursor;
     }
 }
-
