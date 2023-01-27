@@ -9,5 +9,6 @@
 
     <item
         android:state_selected="false"
-        android:drawable="@android:color/black"/>
+        android:drawable="@android:color/black"
+        android:color="@android:color/white"/>
 </selector>
