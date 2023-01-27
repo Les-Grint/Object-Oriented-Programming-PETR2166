@@ -50,9 +50,11 @@ public class Crick_TicketsActivity extends AppCompatActivity {
         Adult_Ticket_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // This sets the button clicked as enabled false and two other buttons as enabled true, effectively blanking out the buttons not selected.
                 Child_Ticket_Btn.setEnabled(true);
                 Member_Ticket_Btn.setEnabled(true);
                 Adult_Ticket_Btn.setEnabled(false);
+                // This sets the boolean variable that represents the button clicked as true and the boolean variable that represents the two other buttons as false.
                 A_T = true;
                 C_T = false;
                 M_T = false;
@@ -63,9 +65,11 @@ public class Crick_TicketsActivity extends AppCompatActivity {
         Child_Ticket_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // This sets the button clicked as enabled false and two other buttons as enabled true, effectively blanking out the buttons not selected.
                 Adult_Ticket_Btn.setEnabled(true);
                 Member_Ticket_Btn.setEnabled(true);
                 Child_Ticket_Btn.setEnabled(false);
+                // This sets the boolean variable that represents the button clicked as true and the boolean variable that represents the two other buttons as false.
                 A_T = false;
                 C_T = true;
                 M_T = false;
@@ -76,9 +80,11 @@ public class Crick_TicketsActivity extends AppCompatActivity {
         Member_Ticket_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // This sets the button clicked as enabled false and two other buttons as enabled true, effectively blanking out the buttons not selected.
                 Adult_Ticket_Btn.setEnabled(true);
                 Child_Ticket_Btn.setEnabled(true);
                 Member_Ticket_Btn.setEnabled(false);
+                // This sets the boolean variable that represents the button clicked as true and the boolean variable that represents the two other buttons as false.
                 A_T = false;
                 C_T = false;
                 M_T = true;
@@ -89,9 +95,11 @@ public class Crick_TicketsActivity extends AppCompatActivity {
         Front_Row_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // This sets the button clicked as enabled false and two other buttons as enabled true, effectively blanking out the buttons not selected.
                 Middle_Row_Btn.setEnabled(true);
                 Back_Row_Btn.setEnabled(true);
                 Front_Row_Btn.setEnabled(false);
+                // This sets the boolean variable that represents the button clicked as true and the boolean variable that represents the two other buttons as false.
                 F_R = true;
                 M_R = false;
                 B_R = false;
@@ -102,9 +110,11 @@ public class Crick_TicketsActivity extends AppCompatActivity {
         Middle_Row_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // This sets the button clicked as enabled false and two other buttons as enabled true, effectively blanking out the buttons not selected.
                 Front_Row_Btn.setEnabled(true);
                 Back_Row_Btn.setEnabled(true);
                 Middle_Row_Btn.setEnabled(false);
+                // This sets the boolean variable that represents the button clicked as true and the boolean variable that represents the two other buttons as false.
                 F_R = false;
                 M_R = true;
                 B_R = false;
@@ -115,9 +125,11 @@ public class Crick_TicketsActivity extends AppCompatActivity {
         Back_Row_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // This sets the button clicked as enabled false and two other buttons as enabled true, effectively blanking out the buttons not selected.
                 Front_Row_Btn.setEnabled(true);
                 Middle_Row_Btn.setEnabled(true);
                 Back_Row_Btn.setEnabled(false);
+                // This sets the boolean variable that represents the button clicked as true and the boolean variable that represents the two other buttons as false.
                 F_R = false;
                 M_R = false;
                 B_R = true;
@@ -128,7 +140,9 @@ public class Crick_TicketsActivity extends AppCompatActivity {
         Meal_Deal_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // This sets the button clicked as enabled false blanking it out.
                 Meal_Deal_Btn.setEnabled(false);
+                // This sets the boolean variable that represents the button clicked as true.
                 M_D = true;
             }
         });
@@ -137,7 +151,9 @@ public class Crick_TicketsActivity extends AppCompatActivity {
         VIP_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // This sets the button clicked as enabled false blanking it out.
                 VIP_Btn.setEnabled(false);
+                // This sets the boolean variable that represents the button clicked as true.
                 V_P = true;
             }
         });
@@ -146,10 +162,19 @@ public class Crick_TicketsActivity extends AppCompatActivity {
         Tour_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // This sets the button clicked as enabled false blanking it out.
                 Tour_Btn.setEnabled(false);
+                // This sets the boolean variable that represents the button clicked as true.
                 T_O = true;
             }
         });
+
+        // Below is the onclick listener for the buy button, here is where the decorator pattern is implemented.
+        // The Decorator pattern enables the changing of an object’s behaviour at runtime, this design pattern enables the assembly of fully customisable tickets through a process of ‘wrapping’,
+        // where one object wraps around another object such as the ‘Front_Row_Section’ object wrapping around the ‘Adult_Ticket’ object effectively creating a ‘Front_Row_Section_Adult_Ticket’ at run time.
+        // Each object is of a class, and each class has its own set description and cost along with its own ‘getDescription’ and ‘getCost’ methods. As each object is called and ‘wrapped’ its individual
+        // description and cost values are concatenated within the respective method, enabling the final method call to produce the total value of both the String ‘description’ from all the objects called
+        // and the total Integer ‘cost’ from all the objects called with the integer value being combined through addition rather than concatenation resulting in the total price of all the objects combined.
 
         //This is the listener for the 'Buy_Btn' button
         Buy_Btn.setOnClickListener(new View.OnClickListener() {
@@ -887,6 +912,8 @@ public class Crick_TicketsActivity extends AppCompatActivity {
                     cost.setText(TotPrc + Custom_Ticket.getCost());
                 }
 
+                // Invalid ticket selections.
+
                 // Adult ticket / no section.
                 if ((A_T.equals(true) && (C_T.equals(false) && (M_T.equals(false) && (F_R.equals(false) && (M_R.equals(false) && (B_R.equals(false)))))))){
                     Toast.makeText(Crick_TicketsActivity.this, "Select a Section", Toast.LENGTH_SHORT).show();
@@ -917,6 +944,7 @@ public class Crick_TicketsActivity extends AppCompatActivity {
                     Toast.makeText(Crick_TicketsActivity.this, "Select ticket type", Toast.LENGTH_SHORT).show();
                 }
 
+                // Addon selected but no other properties
                 if ((A_T.equals(false) && (C_T.equals(false) && (M_T.equals(false) && (F_R.equals(false) && (M_R.equals(false) && (B_R.equals(false) && (M_D.equals(true) || (V_P.equals(true) || (T_O.equals(true) )))))))))){
                     Toast.makeText(Crick_TicketsActivity.this, "add on", Toast.LENGTH_SHORT).show();
                 }
