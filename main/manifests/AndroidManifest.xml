@@ -2,9 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
         package="com.example.exeriversports">
-
-
-
+    
     <!-- This gives the app permission to access the internet -->
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -13,8 +11,6 @@
 
     <!-- This gives the app permission to access the phones GPS -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-
-
 
     <application
         android:allowBackup="true"
@@ -28,11 +24,9 @@
         <activity
             android:name=".WeatherActivity"
             android:exported="false" />
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="YOUR_API_KEY" />
-
         <activity
             android:name=".Ten_TicketsActivity"
             android:exported="false" />
@@ -65,7 +59,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
