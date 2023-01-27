@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -18,6 +21,12 @@ public class AboutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+
+        // This adds 'Contact Us' email link to the about activity page.
+        TextView email = (TextView) findViewById(R.id.about_email);
+        // This defines the target destination of the email once the user has clicked the 'Contact Us' link.
+        email.setText(Html.fromHtml("<a href=\"mailto:lez-2008@hotmail.co.uk\">Contact Us</a>"));
+        email.setMovementMethod(LinkMovementMethod.getInstance());
 
         // This initialises a variable and assigns the values of the navigation bar to it to.
         bottomNavigationView = findViewById(R.id.bottom_navigator);
