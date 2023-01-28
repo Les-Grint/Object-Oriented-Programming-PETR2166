@@ -47,7 +47,6 @@ public class Ten_TicketsActivity extends AppCompatActivity {
         Tour_Btn = findViewById(R.id.btn_tour);
         Buy_Btn = findViewById(R.id.btn_purchase);
 
-
         // This is the listener for the 'Adult_Ticket_Btn' button
         Adult_Ticket_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
