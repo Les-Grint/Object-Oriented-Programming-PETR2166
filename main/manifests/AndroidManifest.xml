@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
         package="com.example.exeriversports">
-    
+
     <!-- This gives the app permission to access the internet -->
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -51,9 +51,11 @@
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
+
+        <!-- This changes LoginActivity to the starting page -->
         <activity
             android:name=".MainActivity"
-            android:exported="false" /> <!-- This changes LoginActivity to the starting page -->
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -63,5 +65,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
