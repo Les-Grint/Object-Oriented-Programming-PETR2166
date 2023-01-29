@@ -51,6 +51,7 @@
         android:layout_height="wrap_content"
         android:hint="Password"
         android:textSize="20sp"
+        android:inputType="textPassword"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/lName"/>
 
@@ -61,6 +62,7 @@
         android:layout_height="wrap_content"
         android:hint="Retype Password"
         android:textSize="20sp"
+        android:inputType="textPassword"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/password"/>
 
