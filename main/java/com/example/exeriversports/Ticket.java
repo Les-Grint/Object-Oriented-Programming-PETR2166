@@ -13,12 +13,12 @@ public interface Ticket {
     public double getCost();
 }
 
-// This declares the class 'Adult_Ticket' and uses the key word/statement 'implemments' to
+// This declares the class 'Adult_Ticket' and uses the key word/statement 'implements' to
 // implement the interface 'Ticket', in this case meaning that this subclass must implement
 // the same methods that are present in the super class.
 class Adult_Ticket implements Ticket {
 
-    // This '@Override' annotation instructs Java to overide the method in the super
+    // This '@Override' annotation instructs Java to override the method in the super
     // class with this method in its place.
     @Override
     // This declares the method 'getDescription' and the string variable data type.
@@ -41,12 +41,12 @@ class Adult_Ticket implements Ticket {
     }
 }
 
-// This declares the class 'Child_Ticket' and uses the key word/statement 'implemments' to
+// This declares the class 'Child_Ticket' and uses the key word/statement 'implements' to
 // implement the interface 'Ticket', in this case meaning that this subclass must implement
 // the same methods that are present in the super class.
 class Child_Ticket implements Ticket {
 
-    // This '@Override' annotation instructs Java to overide the method in the super
+    // This '@Override' annotation instructs Java to override the method in the super
     // class with this method in its place.
     @Override
     // This declares the method 'getDescription' and the string variable data type.
@@ -58,7 +58,7 @@ class Child_Ticket implements Ticket {
 
     public double ePrice = 5.00;
 
-    // This '@Override' annotation instructs Java to overide the method in the super
+    // This '@Override' annotation instructs Java to override the method in the super
     // class with this method in its place.
     @Override
     // This declares the method 'getCost' and the double variable data type.
@@ -69,12 +69,12 @@ class Child_Ticket implements Ticket {
     }
 }
 
-// This declares the class 'Member_Ticket' and uses the key word/statement 'implemments' to
+// This declares the class 'Member_Ticket' and uses the key word/statement 'implements' to
 // implement the interface 'Ticket', in this case meaning that this subclass must implement
 // the same methods that are present in the super class.
 class Member_Ticket implements Ticket {
 
-    // This '@Override' annotation instructs Java to overide the method in the super
+    // This '@Override' annotation instructs Java to override the method in the super
     // class with this method in its place.
     @Override
     // This declares the method 'getDescription' and the string variable data type.
@@ -86,7 +86,7 @@ class Member_Ticket implements Ticket {
 
     public double ePrice = 8.00;
 
-    // This '@Override' annotation instructs Java to overide the method in the super
+    // This '@Override' annotation instructs Java to override the method in the super
     // class with this method in its place.
     @Override
     // This declares the method 'getCost' and the double variable data type.
@@ -99,7 +99,7 @@ class Member_Ticket implements Ticket {
 
 // This declares the Abstract class 'Ticket_Decorator'. Abstract classes cannot be instantiated
 // but can be extended by another class creating a subclass. Here the 'Ticket_Decorator' class
-// uses the key word/statement 'implemments' to implement the interface 'Ticket'. In this case
+// uses the key word/statement 'implements' to implement the interface 'Ticket'. In this case
 // meaning that this subclass must implement the same methods that are present in the super class.
 // This is an aggregation relationship or a "Has-A" relationship.
 abstract class Ticket_Decorator implements Ticket {
@@ -273,7 +273,7 @@ class VIP_Access extends Ticket_Decorator {
         // This uses the 'super' keyword/statement to initialise the constructor by
         // calling the super class Ticket_Decorator.
         super(New_Ticket);
-        // This outputs the text 'Added VIP Access to Private Loung and Bar + Valet Parking, Que Jump and Early Entry   £'
+        // This outputs the text 'Added VIP Access to Private Lounge and Bar + Valet Parking, Que Jump and Early Entry   £'
         System.out.println("Added VIP Access to Private Lounge and Bar + Valet Parking, Que Jump and Early Entry   £" + price);
     }
 
