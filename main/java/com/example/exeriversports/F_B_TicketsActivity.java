@@ -944,7 +944,7 @@ public class F_B_TicketsActivity extends AppCompatActivity {
 
                 // Addon selected but no other properties
                 if ((A_T.equals(false) && (C_T.equals(false) && (M_T.equals(false) && (F_R.equals(false) && (M_R.equals(false) && (B_R.equals(false) && (M_D.equals(true) || (V_P.equals(true) || (T_O.equals(true) )))))))))){
-                    Toast.makeText(F_B_TicketsActivity.this, "add on", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(F_B_TicketsActivity.this, "Select Ticket Type", Toast.LENGTH_SHORT).show();
                 }
             }
         });
