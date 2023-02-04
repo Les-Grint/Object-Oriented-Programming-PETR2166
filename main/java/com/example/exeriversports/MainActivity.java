@@ -58,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
                         Boolean checkmember = DB.checkemail(Email);
                         if(checkmember==false)
                         {
-                            // The 'insert' function will insert all the data from the user into the database.
+                            // The calls the 'insertData' method from 'DBFunctions' which
+                            // will insert all the data from the user into the database.
                             Boolean insert = DB.insertData(Email, FirstName, LastName, Password);
                             if(insert==true)
                             {
